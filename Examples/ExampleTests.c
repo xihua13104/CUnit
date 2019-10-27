@@ -320,21 +320,21 @@ static CU_TestInfo tests_fatal[] = {
 
 static CU_SuiteInfo suites[] = {
   { "suite_success_both",  suite_success_init, suite_success_clean, NULL, NULL, tests_success},
-  { "suite_success_init",  suite_success_init, NULL,                NULL, NULL, tests_success},
-  { "suite_success_clean", NULL,               suite_success_clean, NULL, NULL, tests_success},
-  { "test_failure",        NULL,               NULL,                NULL, NULL, tests_failure},
-  { "suite_failure_both",  suite_failure_init, suite_failure_clean, NULL, NULL, tests_suitefailure}, /* tests should not run */
-  { "suite_failure_init",  suite_failure_init, NULL,                NULL, NULL, tests_suitefailure}, /* tests should not run */
-  { "suite_success_but_failure_clean", NULL,   suite_failure_clean, NULL, NULL, tests_suitefailure}, /* tests will run, suite counted as running, but suite tagged as a failure */
-  { "TestSimpleAssert",    NULL,               NULL,                NULL, NULL, tests_simple},
-  { "TestBooleanAssert",   NULL,               NULL,                NULL, NULL, tests_bool},
-  { "TestEqualityAssert",  NULL,               NULL,                NULL, NULL, tests_equal},
-  { "TestPointerAssert",   NULL,               NULL,                NULL, NULL, tests_ptr},
-  { "TestNullnessAssert",  NULL,               NULL,                NULL, NULL, tests_null},
-  { "TestStringAssert",    NULL,               NULL,                NULL, NULL, tests_string},
-  { "TestNStringAssert",   NULL,               NULL,                NULL, NULL, tests_nstring},
-  { "TestDoubleAssert",    NULL,               NULL,                NULL, NULL, tests_double},
-  { "TestFatal",           NULL,               NULL,                NULL, NULL, tests_fatal},
+  //{ "suite_success_init",  suite_success_init, NULL,                NULL, NULL, tests_success},
+  //{ "suite_success_clean", NULL,               suite_success_clean, NULL, NULL, tests_success},
+  //{ "test_failure",        NULL,               NULL,                NULL, NULL, tests_failure},
+  //{ "suite_failure_both",  suite_failure_init, suite_failure_clean, NULL, NULL, tests_suitefailure}, /* tests should not run */
+  //{ "suite_failure_init",  suite_failure_init, NULL,                NULL, NULL, tests_suitefailure}, /* tests should not run */
+  //{ "suite_success_but_failure_clean", NULL,   suite_failure_clean, NULL, NULL, tests_suitefailure}, /* tests will run, suite counted as running, but suite tagged as a failure */
+  //{ "TestSimpleAssert",    NULL,               NULL,                NULL, NULL, tests_simple},
+  //{ "TestBooleanAssert",   NULL,               NULL,                NULL, NULL, tests_bool},
+  //{ "TestEqualityAssert",  NULL,               NULL,                NULL, NULL, tests_equal},
+  //{ "TestPointerAssert",   NULL,               NULL,                NULL, NULL, tests_ptr},
+  //{ "TestNullnessAssert",  NULL,               NULL,                NULL, NULL, tests_null},
+  //{ "TestStringAssert",    NULL,               NULL,                NULL, NULL, tests_string},
+  //{ "TestNStringAssert",   NULL,               NULL,                NULL, NULL, tests_nstring},
+  //{ "TestDoubleAssert",    NULL,               NULL,                NULL, NULL, tests_double},
+  //{ "TestFatal",           NULL,               NULL,                NULL, NULL, tests_fatal},
 	CU_SUITE_INFO_NULL,
 };
 
@@ -350,7 +350,7 @@ void AddTests(void)
 		exit(EXIT_FAILURE);
 	}
 
-/* implementation without shortcut registration
+/* implementation without shortcut registration*/
   CU_pSuite pSuite;
 
   pSuite = CU_add_suite("suite_success_both", suite_success_init, suite_success_clean);
@@ -358,71 +358,71 @@ void AddTests(void)
   CU_add_test(pSuite, "testSuccess2", testSuccess2);
   CU_add_test(pSuite, "testSuccess3", testSuccess3);
 
-  pSuite = CU_add_suite("suite_success_init", suite_success_init, NULL);
-  CU_add_test(pSuite, "testSuccess1", testSuccess1);
-  CU_add_test(pSuite, "testSuccess2", testSuccess2);
-  CU_add_test(pSuite, "testSuccess3", testSuccess3);
+  //pSuite = CU_add_suite("suite_success_init", suite_success_init, NULL);
+  //CU_add_test(pSuite, "testSuccess1", testSuccess1);
+  //CU_add_test(pSuite, "testSuccess2", testSuccess2);
+  //CU_add_test(pSuite, "testSuccess3", testSuccess3);
 
-  pSuite = CU_add_suite("suite_success_clean", NULL, suite_success_clean);
-  CU_add_test(pSuite, "testSuccess1", testSuccess1);
-  CU_add_test(pSuite, "testSuccess2", testSuccess2);
-  CU_add_test(pSuite, "testSuccess3", testSuccess3);
+  //pSuite = CU_add_suite("suite_success_clean", NULL, suite_success_clean);
+  //CU_add_test(pSuite, "testSuccess1", testSuccess1);
+  //CU_add_test(pSuite, "testSuccess2", testSuccess2);
+  //CU_add_test(pSuite, "testSuccess3", testSuccess3);
 
-  pSuite = CU_add_suite("test_failure", NULL, NULL);
-  CU_add_test(pSuite, "testFailure1", testFailure1);
-  CU_add_test(pSuite, "testFailure2", testFailure2);
-  CU_add_test(pSuite, "testFailure3", testFailure3);
+  //pSuite = CU_add_suite("test_failure", NULL, NULL);
+  //CU_add_test(pSuite, "testFailure1", testFailure1);
+  //CU_add_test(pSuite, "testFailure2", testFailure2);
+  //CU_add_test(pSuite, "testFailure3", testFailure3);
 
-  / * tests should not run * /
-  pSuite = CU_add_suite("suite_failure_both", suite_failure_init, suite_failure_clean);
-  CU_add_test(pSuite, "testSuiteFailure1", testSuiteFailure1);
-  CU_add_test(pSuite, "testSuiteFailure2", testSuiteFailure2);
+  ///* tests should not run */
+  //pSuite = CU_add_suite("suite_failure_both", suite_failure_init, suite_failure_clean);
+  //CU_add_test(pSuite, "testSuiteFailure1", testSuiteFailure1);
+  //CU_add_test(pSuite, "testSuiteFailure2", testSuiteFailure2);
 
-  / * tests should not run * /
-  pSuite = CU_add_suite("suite_failure_init", suite_failure_init, NULL);
-  CU_add_test(pSuite, "testSuiteFailure1", testSuiteFailure1);
-  CU_add_test(pSuite, "testSuiteFailure2", testSuiteFailure2);
+  ///* tests should not run */
+  //pSuite = CU_add_suite("suite_failure_init", suite_failure_init, NULL);
+  //CU_add_test(pSuite, "testSuiteFailure1", testSuiteFailure1);
+  //CU_add_test(pSuite, "testSuiteFailure2", testSuiteFailure2);
 
-  / * tests will run, suite counted as running, but suite tagged as a failure * /
-  pSuite = CU_add_suite("suite_success_but_failure_clean", NULL, suite_failure_clean);
-  CU_add_test(pSuite, "testSuiteFailure1", testSuiteFailure1);
-  CU_add_test(pSuite, "testSuiteFailure2", testSuiteFailure2);
+  ///* tests will run, suite counted as running, but suite tagged as a failure */
+  //pSuite = CU_add_suite("suite_success_but_failure_clean", NULL, suite_failure_clean);
+  //CU_add_test(pSuite, "testSuiteFailure1", testSuiteFailure1);
+  //CU_add_test(pSuite, "testSuiteFailure2", testSuiteFailure2);
 
-  pSuite = CU_add_suite("TestSimpleAssert", NULL, NULL);
-  CU_add_test(pSuite, "testSimpleAssert", testSimpleAssert);
-  CU_add_test(pSuite, "testFail", testFail);
+  //pSuite = CU_add_suite("TestSimpleAssert", NULL, NULL);
+  //CU_add_test(pSuite, "testSimpleAssert", testSimpleAssert);
+  //CU_add_test(pSuite, "testFail", testFail);
 
-  pSuite = CU_add_suite("TestBooleanAssert", NULL, NULL);
-  CU_add_test(pSuite, "testAssertTrue", testAssertTrue);
-  CU_add_test(pSuite, "testAssertFalse", testAssertFalse);
+  //pSuite = CU_add_suite("TestBooleanAssert", NULL, NULL);
+  //CU_add_test(pSuite, "testAssertTrue", testAssertTrue);
+  //CU_add_test(pSuite, "testAssertFalse", testAssertFalse);
 
-  pSuite = CU_add_suite("TestEqualityAssert", NULL, NULL);
-  CU_add_test(pSuite, "testAssertEqual", testAssertEqual);
-  CU_add_test(pSuite, "testAssertNotEqual", testAssertNotEqual);
+  //pSuite = CU_add_suite("TestEqualityAssert", NULL, NULL);
+  //CU_add_test(pSuite, "testAssertEqual", testAssertEqual);
+  //CU_add_test(pSuite, "testAssertNotEqual", testAssertNotEqual);
 
-  pSuite = CU_add_suite("TestPointerAssert", NULL, NULL);
-  CU_add_test(pSuite, "testAssertPtrEqual", testAssertPtrEqual);
-  CU_add_test(pSuite, "testAssertPtrNotEqual", testAssertPtrNotEqual);
+  //pSuite = CU_add_suite("TestPointerAssert", NULL, NULL);
+  //CU_add_test(pSuite, "testAssertPtrEqual", testAssertPtrEqual);
+  //CU_add_test(pSuite, "testAssertPtrNotEqual", testAssertPtrNotEqual);
 
-  pSuite = CU_add_suite("TestNullnessAssert", NULL, NULL);
-  CU_add_test(pSuite, "testAssertPtrNull", testAssertPtrNull);
-  CU_add_test(pSuite, "testAssertPtrNotNull", testAssertPtrNotNull);
+  //pSuite = CU_add_suite("TestNullnessAssert", NULL, NULL);
+  //CU_add_test(pSuite, "testAssertPtrNull", testAssertPtrNull);
+  //CU_add_test(pSuite, "testAssertPtrNotNull", testAssertPtrNotNull);
 
-  pSuite = CU_add_suite("TestStringAssert", NULL, NULL);
-  CU_add_test(pSuite, "testAssertStringEqual", testAssertStringEqual);
-  CU_add_test(pSuite, "testAssertStringNotEqual", testAssertStringNotEqual);
+  //pSuite = CU_add_suite("TestStringAssert", NULL, NULL);
+  //CU_add_test(pSuite, "testAssertStringEqual", testAssertStringEqual);
+  //CU_add_test(pSuite, "testAssertStringNotEqual", testAssertStringNotEqual);
 
-  pSuite = CU_add_suite("TestNStringAssert", NULL, NULL);
-  CU_add_test(pSuite, "testAssertNStringEqual", testAssertNStringEqual);
-  CU_add_test(pSuite, "testAssertNStringNotEqual", testAssertNStringNotEqual);
+  //pSuite = CU_add_suite("TestNStringAssert", NULL, NULL);
+  //CU_add_test(pSuite, "testAssertNStringEqual", testAssertNStringEqual);
+  //CU_add_test(pSuite, "testAssertNStringNotEqual", testAssertNStringNotEqual);
 
-  pSuite = CU_add_suite("TestDoubleAssert", NULL, NULL);
-  CU_add_test(pSuite, "testAssertDoubleEqual", testAssertDoubleEqual);
-  CU_add_test(pSuite, "testAssertDoubleNotEqual", testAssertDoubleNotEqual);
+  //pSuite = CU_add_suite("TestDoubleAssert", NULL, NULL);
+  //CU_add_test(pSuite, "testAssertDoubleEqual", testAssertDoubleEqual);
+  //CU_add_test(pSuite, "testAssertDoubleNotEqual", testAssertDoubleNotEqual);
 
-  pSuite = CU_add_suite("TestFatal", NULL, NULL);
-  CU_add_test(pSuite, "testFatal", testFatal);
-*/
+  //pSuite = CU_add_suite("TestFatal", NULL, NULL);
+  /*CU_add_test(pSuite, "testFatal", testFatal);*/
+
 }
 
 void print_example_results(void)

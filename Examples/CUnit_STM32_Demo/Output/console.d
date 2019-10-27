@@ -1,0 +1,17 @@
+..\output\console.o: ..\Cunit\Sources\Console\Console.c
+..\output\console.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\output\console.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\output\console.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
+..\output\console.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\assert.h
+..\output\console.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+..\output\console.o: ..\Cunit\Headers\CUnit.h
+..\output\console.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+..\output\console.o: ..\Cunit\Headers\CUError.h
+..\output\console.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\errno.h
+..\output\console.o: ..\Cunit\Headers\CUnit.h
+..\output\console.o: ..\Cunit\Headers\TestDB.h
+..\output\console.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\setjmp.h
+..\output\console.o: ..\Cunit\Headers\TestRun.h
+..\output\console.o: ..\Cunit\Headers\Util.h
+..\output\console.o: ..\Cunit\Headers\Console.h
+..\output\console.o: ..\Cunit\Headers\CUnit_intl.h

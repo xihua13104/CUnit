@@ -1,4 +1,1 @@
-﻿  BasicTest.c
-  ExampleTests.c
-  正在生成代码...
-  BasicTest.vcxproj -> C:\Users\heye\Desktop\git_test\cunit\CUnit\Examples\BasicTest\.\BasicTest.exe
+﻿LINK : fatal error LNK1168: 无法打开 .\BasicTest.exe 进行写入
